@@ -18,7 +18,7 @@ function clearFields() {
 $(document).ready(function() {
   $("form#currency-exchanger").submit(function(event) {
     event.preventDefault();
-    let USD = $('#inputUSD').val();
+    let USD = parseInt($('#inputUSD').val());
     let currency = $("#newCurrency").val();
     clearFields();
 
@@ -34,6 +34,7 @@ $(document).ready(function() {
     let promise = CurrencyExchange.getCurrency(currency);
     promise.then(function(response) {
       const results = JSON.parse(response);
+      let USD = parseInt($('#inputUSD').val());
       $('.showResult').text(`(${Math.round(results.conversion_rate * USD)}`);
     }, function(error) {
       $('.showError').text(`There was an error: ${error}`);
