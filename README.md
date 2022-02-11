@@ -24,10 +24,13 @@ DESCRIBE
 
 ## Setup/Installation Requirements
 
-* Go to _GITLINK_
-* Cone this repository to your desktop (or other desired location)
-* Navigate to the top level of the directory called _DIRECTORY_
-* Open the index.html file in your browser
+* API key is required for this application.  To obtain an API key required, go to https://www.exchangerate-api.com/ and followead the instructions for acquiring an API Key
+* In your terminal, Clone this repository to your desktop (or other desired location) by entering: _"git clone https://github.com/jessb-epicodus/currency-exchanger.git"_
+* Navigate to the top level directory with: _cd currency-exchanger_
+* Open the downloaded directory in a text editor of your choice (ex VSCode)
+* Now in the root directory, Create a _.env_ file. Add a line and enter your API key here as: _"API_KEY = your-api-key-here"_
+* Add a line for _.env_ to _.gitignore_
+* Still in the root directory, install the required dependencies, plugins and modules as already specified in _package.json_ by entering: _"npm install"_ in the terminal
 * _This is not yet published._
 
 ## Known Bugs
