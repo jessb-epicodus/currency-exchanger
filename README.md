@@ -20,11 +20,11 @@
 
 ## Description
 
-DESCRIBE
+This is a currency exchange application. A user can enter an amount (in U.S. dollars) and then choose which currency it should be converted to. The user will then see the total amount they entered in converted currency.  The conversion will be made by making an API call.
 
 ## Setup/Installation Requirements
 
-* API key is required for this application.  To obtain an API key required, go to https://www.exchangerate-api.com/ and followead the instructions for acquiring an API Key
+* API key is required for this application.  To obtain a FREE API key required, go to https://www.exchangerate-api.com/ and followead the instructions for acquiring an API Key
 * In your terminal, Clone this repository to your desktop (or other desired location) by entering: _"git clone https://github.com/jessb-epicodus/currency-exchanger.git"_
 * Navigate to the top level directory with: _cd currency-exchanger_
 * Open the downloaded directory in a text editor of your choice (ex VSCode)
