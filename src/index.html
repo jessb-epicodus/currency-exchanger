@@ -7,7 +7,7 @@
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4">Currency Exchanger</h1>
-      <p class="lead">This is currency exchanger. It's simple! Enter an amount in USD, choose the currency you want to see it converted to & click "Convert"</p>
+      <p class="lead">This is a currency exchanger. It's simple! Enter an amount in USD, choose the currency you want to see it converted to & click "Convert"</p>
       <hr class="my-4">
       <p>
       <div class="container px-lg-5">
@@ -15,38 +15,25 @@
           <div class="col py-3 px-lg-5 border bg-light">
             <div id="currency-exchanger">
               <label for="USD">Enter amount (USD):</label>
-              <input id="input-USD" type="number"><br><br>
-              <label for="currencyTo">Choose currency you would like to convert to?</label>
+              <input id="input-USD" type="number">
+              <br><br>
+              <label for="newCurrency">Choose currency you would like to convert to?</label>
               <div class="radio">
-                <label>
-                  <input type="radio" name="currency" value="MXN">
-                  Mexican peso
-                </label>
+                <label><input type="radio" name="currency" value="MXN">Mexican peso</label>
               </div>
               <div class="radio">
-                <label>
-                  <input type="radio" name="currency" value="CAD">
-                  Canadian dollar
-                </label>
+                <label><input type="radio" name="currency" value="CAD">Canadian dollar</label>
               </div>
               <div class="radio">
-                <label>
-                  <input type="radio" name="currency" value="EUR">
-                  Euro banknote
-                </label>
+                <label><input type="radio" name="currency" value="EUR">Euro banknote</label>
               </div>
               <div class="radio">
-                <label>
-                  <input type="radio" name="currency" value="GBP">
-                  Great British Pound
-                </label>
+                <label><input type="radio" name="currency" value="GBP">Great British Pound</label>
               </div>
               <div class="radio">
-                <label>
-                  <input type="radio" name="currency" value="AUD">
-                  Australian Dollar
-                </label>
+                <label><input type="radio" name="currency" value="AUD">Australian Dollar</label>
               </div>
+              <br>
               <button type="button" class="btn btn-success">Convert</button>
             </div>
           </div>
