@@ -13,33 +13,33 @@
       <div class="container px-lg-5">
         <div class="row mx-lg-n5">
           <div class="col py-3 px-lg-5 border bg-light">
-            <div id="currency-exchanger">
-              <label for="USD">Enter amount (USD):</label>
-              <input id="input-USD" type="number">
+            <form id="currency-exchanger">
+              <label for="inputUSD">Enter amount (USD):</label>
+              <input id="inputUSD" type="number">
               <br><br>
               <label for="newCurrency">Choose currency you would like to convert to?</label>
               <div class="radio">
-                <label><input type="radio" name="currency" value="MXN">Mexican peso</label>
+                <label><input type="radio" name="currency" value="MXN"> Mexican peso</label>
               </div>
               <div class="radio">
-                <label><input type="radio" name="currency" value="CAD">Canadian dollar</label>
+                <label><input type="radio" name="currency" value="CAD"> Canadian dollar</label>
               </div>
               <div class="radio">
-                <label><input type="radio" name="currency" value="EUR">Euro banknote</label>
+                <label><input type="radio" name="currency" value="EUR"> Euro banknote</label>
               </div>
               <div class="radio">
-                <label><input type="radio" name="currency" value="GBP">Great British Pound</label>
+                <label><input type="radio" name="currency" value="GBP"> Great British Pound</label>
               </div>
               <div class="radio">
-                <label><input type="radio" name="currency" value="AUD">Australian Dollar</label>
+                <label><input type="radio" name="currency" value="AUD"> Australian Dollar</label>
               </div>
               <br>
               <button type="button" class="btn btn-success">Convert</button>
-            </div>
+            </form>
           </div>
           <div class="col py-3 px-lg-5 border bg-light">
             <h6> <!-- selected currency: --></h6>
-            <div class="showErrors"></div>
+            <div class="showError"></div>
             <div class="showResult"> <!-- converted amount here --> </div>
           </div>
         </div>
@@ -48,8 +48,6 @@
   </div>
 </body>
 </html>
-
-
 <!-- <select class="form-control" id="currencyTo">
   <option value="MXN">Mexican peso</option>
   <option value="CAD">Canadian dollar</option>

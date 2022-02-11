@@ -18,21 +18,27 @@ function clearFields() {
 $(document).ready(function() {
   $('form#currency-exchanger').submit(function(event) {
     event.preventDefault();
-    let USD = $('#input-USD').val();
-    if (USD === "")
-      return $("#showResult").text("Enter an amount");
+    let USD = $('#inputUSD').val();
     let currency = $("#newCurrency").val();
+    $('#input-USD').val("");
+    clearFields();
+
+    if (USD === "" || USD < 0)
+      return $("#showResult").text("Enter a positive amount");
     if (currency === "null")
       return $("#showResult").text("Choose a currency");
-    $('#input-USD').val("");
 
-    clearFields();
-    let promise = CurrencyService.getCurrency(USD, currency);
+// "target_code": "GBP",
+// "conversion_rate": 0.8412
+// if target_code = value then USD * conversion_rate
+
+    let promise = CurrencyService.getCurrency(currency);
     promise.then(function(response) {
-      const exchange = JSON.parse(response);
-      $('.showResult').text(`Math.round(${exchange.conversion_rate})`);
+      const results = JSON.parse(response);
+      
+      $('.showResult').text(`Math.round(${results.conversion_rate})`);
     }, function(error) {
-      $('.showErrors').text(`There was an error: ${error}`);
+      $('.showError').text(`There was an error: ${error}`);
     });
   });
 });
