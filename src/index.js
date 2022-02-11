@@ -18,14 +18,15 @@ function clearFields() {
 $(document).ready(function() {
   $("form#currency-exchanger").submit(function(event) {
     event.preventDefault();
-    let USD = parseInt($('#inputUSD').val());
-    let currency = $("#newCurrency").val();
+    const USD = parseInt($('#inputUSD').val());
+    const currencyArray = $("#newCurrency").val();
+    let currency = currencyArray.toString();
     clearFields();
 
-    if (USD === "" || USD < 0)
+    if (USD < 0)
       return $(".showResult").text("Enter a positive amount");
     if (currency === "null")
-      return $("3showResult").text("Choose a currency");
+      return $(".showResult").text("Choose a currency");
 
 // "target_code": "GBP",
 // "conversion_rate": 0.8412
@@ -36,8 +37,17 @@ $(document).ready(function() {
       const results = JSON.parse(response);
       let USD = parseInt($('#inputUSD').val());
       $('.showResult').text(`(${Math.round(results.conversion_rate * USD)}`);
+      $('.showError').text("");
     }, function(error) {
       $('.showError').text(`There was an error: ${error}`);
     });
   });
 });
+
+// if (error === "unsupported-code") {
+//   $('.showError').text("Choose a currency from the provided list");
+// } else if (error === "invalid-key" ||  error === "inactive-account") {
+//   $('.showError').text("Follow instructions for obtaining a valid API key");
+// } else if (error === "quota-reached" ||  error === "quota-reached") {
+//   $('.showError').text("See documentation for directions & limitations using this API");
+// } else {}
