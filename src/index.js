@@ -5,8 +5,6 @@ import './css/styles.css';
 import CurrencyExchange from './js/currency-exchange';
 
 function clearFields() {
-  $('#inputUSD').val("");
-  $("input:radio[name=newCurrency]").removeAttr("checked");
   $('.showResult').text("");
   $('.showError').text("");
 }
@@ -26,11 +24,18 @@ async function makeApiCall(currency, USD) {
   getCurrency(response);
 }
 
+
 $(document).ready(function() {
   $("form#currency-exchanger").submit(function(event) {
     event.preventDefault();
     let USD = parseInt($('#inputUSD').val());
     let currency = $("input:radio[name=newCurrency]:checked").val();
+    if (!USD) {
+      return $('.showError').text("Enter an amount to convert.");
+    }
+    if (!currency === "checked") {
+      return $('.showError').text("Choose a currency to convert to.");
+    }
     clearFields();
     makeApiCall(currency, USD);
   });
@@ -42,3 +47,5 @@ $(document).ready(function() {
 // cad $
 // aud $
 // "unsupported-code" "Choose a currency"
+// currency === undeifined  Choose a currency to convert to
+// !USD Enter an amount to convert
