@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import CurrencyExchange from './js/Xcurrency-exchange';
+import CurrencyExchange from './js/currency-exchange';
 
 function clearFields() {
   $('#inputUSD').val("");
@@ -12,9 +12,9 @@ function clearFields() {
 }
 
 function getCurrency(response) {
-  let USD = parseInt($('#inputUSD').val());
-  if (response.target_code) {
-    $('.showResult').text(`(${response.conversion_rate} * ${USD}) ${response.target_code}`);
+  // let USD = parseInt($('#inputUSD').val());
+  if (response) {
+    $('.showResult').text(`${response.conversion_rate} ${response.target_code}`);
   } else {
     $('.showError').text(`There was an error: ${response}`);
   }
@@ -29,8 +29,9 @@ $(document).ready(function() {
   $("form#currency-exchanger").submit(function(event) {
     event.preventDefault();
     let currency = $("input:radio[name=newCurrency]:checked").val();
-    //If (currency !== 'checked') {
-    // $(".showError").text("Choose a currency to convert to.")
+    //If (currency !== 'checked' || !USD > 0) {
+    // $(".showError").text("Enter an amount & choose a currency to convert to.") }
+    //  else {
     clearFields();
     makeApiCall(currency);
   });
