@@ -13,13 +13,13 @@ function getCurrency(response) {
   if (response) {
     let currency = $("input:radio[name=newCurrency]:checked").val();
     if (currency === "MXN" || currency === "CAD" || currency === "AUD") {
-      $('.showResult').text(`$${response.conversion_result}`);
+      $('.showResult').text(`$${Math.round(response.conversion_result * 100) / 100}`);
       $('.showError').text("");
     } else if (currency === "GBP") {
-      $('.showResult').text(`£${response.conversion_result}`);
+      $('.showResult').text(`£${Math.round(response.conversion_result * 100) / 100}`);
       $('.showError').text("");
     } else if (currency === "EUR") {
-      $('.showResult').text(`€${response.conversion_result}`);
+      $('.showResult').text(`€${Math.round(response.conversion_result * 100) / 100}`);
       $('.showError').text("");
     } 
   } else {
