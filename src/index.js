@@ -39,7 +39,7 @@ $(document).ready(function() {
     $('.showResult').text("");
     let USD = parseInt($('#inputUSD').val());
     let currency = $("input:radio[name=newCurrency]:checked").val();
-    if (!USD) {
+    if (!USD || USD < 0) {
       return $('.showError').text("Enter an amount to convert.");
     }
     if (currency === undefined) {
