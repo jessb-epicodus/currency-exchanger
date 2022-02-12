@@ -19,16 +19,11 @@ $(document).ready(function() {
   $("form#currency-exchanger").submit(function(event) {
     event.preventDefault();
     clearFields();
-    // let USD = parseInt($('#inputUSD').val());
-
-    // if (!USD)
-    //   return $(".showResult").text("Enter a positive amount");
-
+    let USD =$('#inputUSD').val();
     let currency = $("input:radio[name=newCurrency]:checked").val();
     let promise = CurrencyExchange.getCurrency(currency);
     promise.then(function(response) {
       const results = JSON.parse(response);
-      let USD = parseInt($('#inputUSD').val());
       $('.showResult').text(`${Math.round(results.conversion_rate * USD)} ${results.target_code}`);
       $('.showError').text("");
     }, function(error) {
@@ -36,11 +31,3 @@ $(document).ready(function() {
     });
   });
 });
-
-// if (error === "unsupported-code") {
-//   $('.showError').text("Choose a currency from the provided list");
-// } else if (error === "invalid-key" ||  error === "inactive-account") {
-//   $('.showError').text("Follow instructions for obtaining a valid API key");
-// } else if (error === "quota-reached" ||  error === "quota-reached") {
-//   $('.showError').text("See documentation for directions & limitations using this API");
-// } else {}

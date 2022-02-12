@@ -1,4 +1,3 @@
-
 export default class CurrecnyExchange {  
   static async getExchange(currency) {
     try {
