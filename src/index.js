@@ -12,11 +12,12 @@ function clearFields() {
 }
 
 function getCurrency(response) {
- 
   if (response) {
     $('.showResult').text(`${response.conversion_result}`);
+    $('.showError').text("");
   } else {
     $('.showError').text(`There was an error: ${response}`);
+    $('.showResult').text("");
   }
 }
 
@@ -30,17 +31,14 @@ $(document).ready(function() {
     event.preventDefault();
     let USD = parseInt($('#inputUSD').val());
     let currency = $("input:radio[name=newCurrency]:checked").val();
-    //If (currency !== 'checked' || !USD > 0) {
-    // $(".showError").text("Enter an amount & choose a currency to convert to.") }
-    //  else {
     clearFields();
     makeApiCall(currency, USD);
   });
 });
-
 
 // gbp £
 // euo €
 // mxn $
 // cad $
 // aud $
+// "unsupported-code" "Choose a currency"
