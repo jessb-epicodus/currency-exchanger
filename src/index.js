@@ -11,8 +11,17 @@ function clearFields() {
 
 function getCurrency(response) {
   if (response) {
-    $('.showResult').text(`${response.conversion_result}`);
-    $('.showError').text("");
+    let currency = $("input:radio[name=newCurrency]:checked").val();
+    if (currency === "MXN" || currency === "CAD" || currency === "AUD") {
+      $('.showResult').text(`$${response.conversion_result}`);
+      $('.showError').text("");
+    } else if (currency === "GBP") {
+      $('.showResult').text(`£${response.conversion_result}`);
+      $('.showError').text("");
+    } else if (currency === "EUR") {
+      $('.showResult').text(`€${response.conversion_result}`);
+      $('.showError').text("");
+    } 
   } else {
     $('.showError').text(`There was an error: ${response.error_type}`);
     $('.showResult').text("");
@@ -40,12 +49,3 @@ $(document).ready(function() {
     makeApiCall(currency, USD);
   });
 });
-
-// gbp £
-// euo €
-// mxn $
-// cad $
-// aud $
-// "unsupported-code" "Choose from currency listed below"
-// currency === undefined  Choose a currency to convert to
-// !USD Enter an amount to convert
