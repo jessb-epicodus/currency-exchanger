@@ -1,6 +1,6 @@
 # _Currency Exchanger_
 
-#### By _**Jessica Baker**_ 
+#### By _**Jessi B**_ 
 
 #### _Currency Exchanger - Epicodus -Intermediate JavaScript - Asynchrony and APIs_
 
@@ -41,7 +41,7 @@ This is a currency exchange application. A user can enter an amount (in U.S. dol
 
 ## License
 
-Copyright (c) _Jan 2022_ _Jessica Baker_
+Copyright (c) _Jan 2022_ _Jessi B_
 
 ## Contact
 
