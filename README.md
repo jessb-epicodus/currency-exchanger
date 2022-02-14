@@ -25,12 +25,12 @@ This is a currency exchange application. A user can enter an amount (in U.S. dol
 ## Setup/Installation Requirements
 
 * API key is required for this application.  To obtain a FREE API key required, go to https://www.exchangerate-api.com/ and followead the instructions for acquiring an API Key
-* In your terminal, Clone this repository to your desktop (or other desired location) by entering: _$ git clone https://github.com/jessb-epicodus/currency-exchanger.git_
+* In your terminal, Clone this repository to your desktop (or other desired location) by entering _$ git clone https://github.com/jessb-epicodus/currency-exchanger.git_
 * Navigate to the top level directory with: _$ cd currency-exchanger_
 * Open the downloaded directory in a text editor of your choice (ie VSCode)
 * Now in the root directory, Create a _.env_ file. Add a line and enter your API key here as: _API_KEY = your-api-key-here_
 * Add a line for _.env_ to _.gitignore_
-* Still in the root directory, install the required dependencies, plugins and modules as already specified in _package.json_ by entering _"$ npm install"_
+* Still in the root directory, install the required dependencies, plugins and modules as already specified in _package.json_ by entering _$ npm install_
 * Build this app as specified in _package.json_ by entering _$ npm run build_
 * To open live server in your browser, enter _$ npm start_ in your terminal
 * _This is not yet published._
