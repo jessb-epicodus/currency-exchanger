@@ -4,11 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './js/currency-exchange';
 
-function clearFields() {
-  $('.showResult').text("");
-  $('.showError').text("");
-}
-
 function getCurrency(response) {
   if (response) {
     let currency = $("input:radio[name=newCurrency]:checked").val();
@@ -16,10 +11,10 @@ function getCurrency(response) {
       $('.showResult').text(`$${Math.round(response.conversion_result * 100) / 100}`);
       $('.showError').text("");
     } else if (currency === "GBP") {
-      $('.showResult').text(`£${Math.round(response.conversion_result * 100) / 100}`);
+      $('.showResult').text(`£ ${Math.round(response.conversion_result * 100) / 100}`);
       $('.showError').text("");
     } else if (currency === "EUR") {
-      $('.showResult').text(`€${Math.round(response.conversion_result * 100) / 100}`);
+      $('.showResult').text(`€ ${Math.round(response.conversion_result * 100) / 100}`);
       $('.showError').text("");
     } 
   } else {
@@ -45,7 +40,6 @@ $(document).ready(function() {
     if (currency === undefined) {
       return $('.showError').text("Choose a currency to convert to.");
     }
-    clearFields();
     makeApiCall(currency, USD);
   });
 });
